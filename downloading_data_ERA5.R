@@ -103,7 +103,7 @@ request <- list(
 # If surface data are required then "levtype" = "sfc" could be used
 # instead of "pressure_level" = "500".
 
-# The names of the variable in case of air pressure, temperature and precipitation are:
+# The names of the variable in case of air pressure, 2m temperature and precipitation are:
 # "surface_pressure", "2m_temperature" and "total_precipitation".
     
 # If older versions of the ecmwfr package are used then "dataset"
