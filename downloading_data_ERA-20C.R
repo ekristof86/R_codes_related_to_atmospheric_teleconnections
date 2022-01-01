@@ -76,7 +76,7 @@ request <- list(
     "area" = paste0(lat1,"/",lon1,"/",lat2,"/",lon2), # N, W, S, E
     "grid" = gridRes,
     "format" = "netcdf",
-    "target" = paste0("ERA5_z500_",startDate,"-",endDate,".nc"))
+    "target" = paste0("ERA-20C_z500_",startDate,"-",endDate,".nc"))
     
     file <- wf_request(user     = userID,
                        request  = request,
