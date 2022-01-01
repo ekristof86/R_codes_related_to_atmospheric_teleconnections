@@ -21,10 +21,10 @@ library(ecmwfr) # In order to download ERA5 data in R in NetCDF file format
 
 
 ######### PARAMETERS #########
-# userID:     user ID at Copernicus
-# APIkey:     API key at Copernicus
-              # note that to download ERA Copernicus registration and API key is required
-              # at the following website: https://cds.climate.copernicus.eu/#!/home
+# user:       user ID at Copernicus
+# key:        API key at Copernicus
+              # note that to get user ID and API key Copernicus registration is
+              # required at the following website: https://cds.climate.copernicus.eu/#!/home
 # fileDir:    Where to download data?
 # lon1, lon2: geographical longitude of the selected grid point (negative values: W, positive values: E)
               # (between -180 and 180)
@@ -55,8 +55,6 @@ lat2 <- 90    # N
 startYear <- 1981
 endYear   <- 2020
 
-gridRes <- paste0(2.5,"/",2.5)
-
 monthList <- c("01","02","12") # only winters
   
 dayList <- c("01","02","03","04","05","06","07","08","09","10",
@@ -67,11 +65,10 @@ hourList <- c("00:00","03:00","06:00","09:00","12:00","15:00","18:00","21:00")
   
 timeOut <- 10800
 
+gridRes <- paste0(2.5,"/",2.5)
+
 dataBase <- "reanalysis-era5-pressure-levels" # from 1979 to present
 # "reanalysis-era5-pressure-levels-preliminary-back-extension" # between 1950 and 1978
-
-# Check:
-if(length(startYear) != length(endYear)) stop("The lengths of vectors startYear and endYear are different.")
 
 
 ######### REQUEST #########
@@ -108,5 +105,4 @@ request <- list(
     
 # If older versions of the ecmwfr package are used then "dataset"
 # shall be used as parameter name instead of "dataset_short_name".
-  
-    
+      
