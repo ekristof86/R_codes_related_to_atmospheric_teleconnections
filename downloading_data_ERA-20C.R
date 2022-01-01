@@ -94,4 +94,4 @@ request <- list(
 # In case of total precipitation "type"="fc" shall be used because the type 
 # of this variable is forecast, not analysis. The name of the variable is 228.128.
 # Instead of the time parameter, the step parameter can be used.
-# Precipitation is cumulated from 06 UTC. E.g. "step"="24".
+# Precipitation is accumulated from 06 UTC. E.g. "step"="24".
