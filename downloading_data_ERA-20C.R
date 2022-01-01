@@ -84,7 +84,7 @@ request <- list(
                        path     = fileDir,
                        time_out = timeOut)
 
-### Comments ###
+### COMMENTS ###
 # If surface data are required then "levtype" = "sfc" could be used
 # and parameters "levtype" = "pl" and "levelist" = "500" shall be omitted.
 
