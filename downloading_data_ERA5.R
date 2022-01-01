@@ -13,8 +13,8 @@
 # ECMWF API endpoints https://doi.org/10.5281/zenodo.2647541
 
 # In the example of this script 3 hourly 500 hPa geopotential data can be
-# downloaded for December, January and February from the ERA5 reanalysis,
-# on a 2.5x2.5 horizontal grid.
+# downloaded for December, January and February between 1981 and 2020
+# from the ERA5 reanalysis, on a 2.5x2.5 horizontal grid.
 
 ### Required package ###
 library(ecmwfr) # In order to download ERA5 data in R in NetCDF file format
@@ -104,5 +104,4 @@ request <- list(
 # "surface_pressure", "2m_temperature" and "total_precipitation".
     
 # If older versions of the ecmwfr package are used then "dataset"
-# shall be used as parameter name instead of "dataset_short_name".
-      
+# shall be used as parameter name instead of "dataset_short_name".      
