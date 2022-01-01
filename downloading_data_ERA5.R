@@ -96,7 +96,7 @@ request <- list(
                        path     = fileDir,
                        time_out = timeOut)
 
-### Comments ###
+### COMMENTS ###
 # If surface data are required then "levtype" = "sfc" could be used
 # instead of "pressure_level" = "500".
 
