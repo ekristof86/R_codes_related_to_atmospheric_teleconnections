@@ -69,7 +69,7 @@ y <- c(5,70,2,4,6)
 print(x)
 print(y)
 
-# Calculating of correlations automatically:
+# Calculating correlations automatically:
 cor(x=x, y=y, method="pearson")
 cor(x=x, y=y, method="spearman")
 
