@@ -14,13 +14,10 @@ The main steps of the analysis are the followings:
    (b) Examination of the cluster patterns and creating teleconnection indices <br>
        (published in Kristóf et al. 2021: https://doi.org/10.3390/atmos12101236)
  
- # DOWNLOADING DATA
+# DOWNLOADING DATA
 First, we get the data which are the basis of the analysis. <br>
 Data of ERA-20C and ERA5 are downloaded with the R scripts downloading_data_ERA-20C.R and downloading_data_ERA5.R.
 
-# CREATING STRONGEST NEGATIVE CORRELATION FIELDS AS THE BASIS OF THE ANALYSIS
-Second, we compute Pearson cross-correlations between gridded time series by using the script function_-_computing_cross_correlations.R. <br>
-Pearson correlations are determined based on detrended daily climatology datasets 
-(the long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell).
-After that, strongest negative correlations are obtained in each grid cells.
+# COMPUTING STRONGEST NEGATIVE CORRELATION FIELDS
+Second, we compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series by using the script function_-_computing_absolute_minimum_correlations.R. <br> The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.)<br> After that, strongest negative correlations - in other words absolute minimum correlations - are obtained in each grid cell.
 
