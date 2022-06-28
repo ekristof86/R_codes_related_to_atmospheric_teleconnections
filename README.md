@@ -18,6 +18,6 @@ The main steps of the analysis are the followings:
 First, we get the data which are the basis of the analysis. <br>
 Data of ERA-20C and ERA5 are downloaded with the R scripts downloading_data_ERA-20C.R and downloading_data_ERA5.R.
 
-# COMPUTING STRONGEST NEGATIVE CORRELATION FIELDS
+# OBTAINING FIELDS OF STRONGEST NEGATIVE CORRELATIONS
 Second, we compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series by using the script function_-_computing_absolute_minimum_correlations.R. <br> The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.)<br> After that, strongest negative correlations - in other words absolute minimum correlations - are obtained in each grid cell.
 
