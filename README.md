@@ -22,4 +22,5 @@ Data of ERA-20C and ERA5 are downloaded with the R scripts downloading_data_ERA-
 Second, we compute Pearson cross-correlations between gridded time series by using the script function_-_computing_cross_correlations.R. <br>
 Pearson correlations are determined based on detrended daily climatology datasets 
 (the long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell).
+After that, strongest negative correlations are obtained in each grid cells.
 
