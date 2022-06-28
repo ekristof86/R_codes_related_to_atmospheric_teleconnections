@@ -38,10 +38,14 @@ library(maps) # map
 # point_pch: type of the symbol which represents the points if point==TRUE
 # point_size: size of the symbol which represents the points if point==TRUE
 # point_col: color of the symbol which represents the points if point==TRUE
+# contour_col: color of contour lines if contour==TRUE
+# contour_lwd: width of contour lines if contour==TRUE
+# contour_labcex: size of values associated with contour labels if contour==TRUE
 
 plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res=300, ptsize=18,
                               x=seq(-180,177.5,2.5), y=seq(0,90,2.5),
-                              z=matrix(runif(5328, min=-1, max=-0.2), nrow=length(seq(-180,177.5,2.5)), ncol=length(seq(0,90,2.5))),
+                              z=matrix(runif(5328, min=-1, max=-0.2), nrow=length(seq(-180,177.5,2.5)),
+                                       ncol=length(seq(0,90,2.5))),
                               x_lab=c("-160°","-120°","-80°","-40°","0°","40°","80°","120°","160°"),
                               y_lab=c("0°","20°","40°","60°","80°"),
                               col_nr=9, col_scale="Blues",
@@ -51,7 +55,8 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
                               lon_primary=seq(-160,160,40), lat_primary=seq(0,80,20),
                               lon_secondary=seq(-160,160,20), lat_secondary=seq(0,80,20),
                               size_axis_x=1, size_axis_y=1, col_geo_lines="black", col_borders="grey60",
-                              point=TRUE, point_x=19.5, point_y=48, point_pch=16, point_size=1.5, point_col="red"){
+                              point=TRUE, point_x=19.5, point_y=48, point_pch=16, point_size=1.5, point_col="red",
+                              contour=FALSE, contour_col="red2", contour_lwd=2, contour_labcex=0.7){
   
   # Create the colorscale:
   colorscale <- rev(colorRampPalette(brewer.pal(col_nr,col_scale))(length(brks)-1))
@@ -63,6 +68,10 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
   abline(h=lat_lines, v=lon_lines, col=col_geo_lines, lty=2)
   map("world", interior=FALSE, add=TRUE, col=col_borders)
   if(point==TRUE) points(x=point_x, y=point_y, pch=point_pch, cex=point_size, col=point_col)
+  if(contour==TRUE){ 
+    contour(x=x, y=y, z=z, col=contour_col, lwd=contour_lwd, labcex=contour_labcex,
+            levels=pretty(c(brks[1],tail(brks,1)), length(brks)-1), add=TRUE)
+    }
   axis(1, at=lon_primary, labels=x_lab, cex.axis=size_axis_x)
   axis(1, at=lon_secondary, labels=FALSE, tck=-0.02)
   axis(2, at=lat_primary, labels=y_lab, cex.axis=size_axis_y, las=2)
