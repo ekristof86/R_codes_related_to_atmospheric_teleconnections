@@ -80,7 +80,7 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
   if(point==TRUE) points(x=point_x, y=point_y, pch=point_pch, cex=point_size, col=point_col)
   if(contour==TRUE){ 
     contour(x=x, y=y, z=z, col=contour_col, lwd=contour_lwd, labcex=contour_labcex,
-            levels=pretty(c(brks[1],tail(brks,1)), length(brks)-1), add=TRUE)
+            levels=pretty(c(brks[1],tail(brks,1)), col_nr), add=TRUE)
     }
   axis(1, at=lon_primary, labels=x_lab, cex.axis=size_axis_x)
   axis(1, at=lon_secondary, labels=FALSE, tck=-0.02)
