@@ -2,8 +2,9 @@
 ### PLOTTING DATA ON CARTESIAN MAP ###
 ######################################
 
-# plottingDataOnMap() creates a map with Atlantic view in png format
-# which contains uniformly distributed data on the Northern Hemisphere.
+# Note that plottingDataOnMap() creates a map with Atlantic view in png format
+# as an example. It contains randomly generated uniformly distributed data
+# between the values -1 and -0.2 in the Northern Hemisphere.
 
 # Required packages:
 library(fields) # image.plot
