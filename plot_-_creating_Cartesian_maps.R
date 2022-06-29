@@ -21,6 +21,9 @@ library(maps) # map
 # ptsize: pointsize of the characters on the plot
 # col_nr: number of colors which is used by creating colorscale with function brewer.pal
 # col_scale: title of the colorscale which is available via the RColorBrewer package
+             # (e.g., sequential colorscales are "Blues", "Reds",
+             # divergent colorscales are "RdBu", "RdYlBu")
+# reverse: if TRUE, then the sequence of the colors is reversed
 # brks: breaks of the colorscale
 # lab.brks: legend of the colorscale
 # lat_lines: lines of latitudes
@@ -48,7 +51,7 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
                                        ncol=length(seq(0,90,2.5))),
                               x_lab=c("-160°","-120°","-80°","-40°","0°","40°","80°","120°","160°"),
                               y_lab=c("0°","20°","40°","60°","80°"),
-                              col_nr=9, col_scale="Blues",
+                              reverse=FALSE, col_nr=9, col_scale="Blues",
                               lab.brks=c("-0.7","-0.65","-0.6","-0.55","-0.5","-0.45","-0.4","-0.35","-0.3"),
                               brks=c(-0.7,-0.65,-0.6,-0.55,-0.5,-0.45,-0.4,-0.35,-0.3),
                               lat_lines=seq(0,80,20), lon_lines=seq(-160,160,20),
@@ -59,7 +62,13 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
                               contour=FALSE, contour_col="red2", contour_lwd=2, contour_labcex=0.7){
   
   # Create the colorscale:
-  colorscale <- rev(colorRampPalette(brewer.pal(col_nr,col_scale))(length(brks)-1))
+  if (reverse==TRUE) {
+    colorscale <- rev(colorRampPalette(brewer.pal(col_nr,col_scale))(length(brks)-1))
+  }
+  
+  if (reverse==FALSE) {
+    colorscale <- colorRampPalette(brewer.pal(col_nr,col_scale))(length(brks)-1)
+  }
   
   # Create the map:
   png(file, units="in", width=width, height=height, res=res, pointsize=ptsize)
