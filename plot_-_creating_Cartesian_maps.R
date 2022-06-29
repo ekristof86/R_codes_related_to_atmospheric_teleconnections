@@ -35,6 +35,8 @@ library(maps) # map
 # lat_secondary: y axis ticks where ticks are fitted
 # size_axis_x: size of the x axis labels
 # size_axis_y: size of the x axis labels
+# col_axis_x: color of the x axis
+# col_axis_y: color of the y axis
 # col_geo_lines: color of the lines which represent geographical longitudes and latitudes
 # col_border: color of map borders
 # point_x: longitude of the points which are plotted on the map if point==TRUE
@@ -58,7 +60,8 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
                               lat_lines=seq(0,80,20), lon_lines=seq(-160,160,20),
                               lon_primary=seq(-160,160,40), lat_primary=seq(0,80,20),
                               lon_secondary=seq(-160,160,20), lat_secondary=seq(0,80,20),
-                              size_axis_x=1, size_axis_y=1, col_geo_lines="black", col_borders="grey60",
+                              size_axis_x=1, size_axis_y=1, col_axis_x="grey60", col_axis_y="grey60",
+                              col_geo_lines="black", col_borders="grey60",
                               point=TRUE, point_x=19.5, point_y=48, point_pch=16, point_size=1.5, point_col="red",
                               contour=FALSE, contour_col="red2", contour_lwd=2, contour_labcex=0.7){
   
@@ -70,20 +73,25 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
   if (reverse==FALSE) {
     colorscale <- colorRampPalette(brewer.pal(col_nr,col_scale))(length(brks)-1)
   }
-  
+
   # Create the map:
   png(file, units="in", width=width, height=height, res=res, pointsize=ptsize)
-  image.plot(x=x, y=y, z=z, col=colorscale,
-             breaks=brks, lab.breaks=lab.brks, ann=FALSE, xaxt="n", yaxt="n")
-  abline(h=lat_lines, v=lon_lines, col=col_geo_lines, lty=2)
-  map("world", interior=FALSE, add=TRUE, col=col_borders)
-  if(point==TRUE) points(x=point_x, y=point_y, pch=point_pch, cex=point_size, col=point_col)
-  if(contour==TRUE){ 
-    contour(x=x, y=y, z=z, col=contour_col, lwd=contour_lwd, labcex=contour_labcex,
-            levels=pretty(c(brks[1],tail(brks,1)), col_nr), add=TRUE)
-    }
-  axis(1, at=lon_primary, labels=x_lab, cex.axis=size_axis_x)
-  axis(1, at=lon_secondary, labels=FALSE, tck=-0.02)
-  axis(2, at=lat_primary, labels=y_lab, cex.axis=size_axis_y, las=2)
+      image.plot(x=x, y=y, z=z, col=colorscale,
+                 breaks=brks, lab.breaks=lab.brks, ann=FALSE, xaxt="n", yaxt="n")
+      abline(h=lat_lines, v=lon_lines, col=col_geo_lines, lty=2)
+      map("world", interior=FALSE, add=TRUE, col=col_borders)
+      axis(1, at=lon_primary, labels=x_lab, col=col_axis_x, cex.axis=size_axis_x)
+      axis(1, at=lon_secondary, col=col_axis_x, labels=FALSE, tck=-0.02)
+      axis(2, at=lat_primary, labels=y_lab, col=col_axis_y, cex.axis=size_axis_y, las=2)
+      axis(2, at=lat_secondary, col=col_axis_y, labels=FALSE, tck=-0.02)
+      axis(3, at=lon_secondary, col=col_axis_x, labels=FALSE, tck=0)
+      axis(4, at=lat_secondary, col=col_axis_y, labels=FALSE, tck=0)
+      if(point==TRUE) {
+        points(x=point_x, y=point_y, pch=point_pch, cex=point_size, col=point_col)
+      }
+      if(contour==TRUE) { 
+        contour(x=x, y=y, z=z, col=contour_col, lwd=contour_lwd, labcex=contour_labcex,
+                levels=pretty(c(brks[1],tail(brks,1)), col_nr), add=TRUE)
+        }
   graphics.off()
 }
