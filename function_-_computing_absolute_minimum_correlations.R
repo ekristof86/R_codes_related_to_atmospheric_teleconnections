@@ -75,8 +75,10 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE1: Dimensions of the variable, quantiles of the variable:")
   print(dim(var))
+  if(is.na(min(var))) stop("Error! There is no data in this array.")
+  
   print(quantile(var))
-  print("The first and last six values of the dimensions.")
+    print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon))
   print(tail(lon))
@@ -102,7 +104,8 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE2: Dimensions of the variable, quantiles of the variable:")
   print(dim(var_dc))
-  print(quantile(var_dc))
+  if(is.na(min(var_dc))) stop("Error! There is missing data in this array.")
+    print(quantile(var_dc))
   print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon_dc))
@@ -127,7 +130,9 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE3: Dimensions of the variable, quantiles of the variable:")
   print(dim(var_dc_sd))
+  if(is.na(min(var_dc_sd))) stop("Error! There is no data in this array.")
   print(quantile(var_dc_sd))
+  
   print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon_dc_sd))
@@ -175,11 +180,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE3: The quantiles of the detrended climatology datasets:")
   print(quantile(var_dc_trend))
-  print("If it is NA, then missing data can be in the datasets.")
-  print(quantile(var_dc_trend, na.rm=TRUE))
-  print("If it is NA, then all data are missing.")
-  
-  
+
   ######### III. COMPUTING CROSS-CORRELATIONS & STRONGEST NEGATIVE CORRELATIONS #########
   
   # Converting the three-dimensional array to table:
