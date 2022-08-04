@@ -14,7 +14,7 @@ The main steps of the analysis are the followings:
  
 # 1. DOWNLOADING DATA
 At first, we get the data which are the basis of the analysis. <br>
-Data of ERA-20C and ERA5 are downloaded with the R scripts <a>downloading_data_ERA-20C.R</a> and downloading_data_ERA5.R.
+Data of ERA-20C and ERA5 are downloaded with the R scripts downloading_data_ERA-20C.R and downloading_data_ERA5.R.
 
 # 2. PREPROCESSING DATA
 Preprocession is done by Climate Data Operator (CDO; Schulzweida, 2019; https://doi.org/10.5281/zenodo.3539275).
