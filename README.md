@@ -22,5 +22,7 @@ Preprocession is done by Climate Data Operator (CDO; Schulzweida, 2019; https://
 # 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs)
 We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script function_-_computing_absolute_minimum_correlations.R. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
 <br>
+Note that the scripts only work on arrays without missing data!
+<br>
 SNCs can be plotted on maps with Cartesian projection by using the function in plot_-_creating_Cartesian_maps.R.
 
