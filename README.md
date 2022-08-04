@@ -25,3 +25,8 @@ We compute Pearson cross-correlation coefficients (henceforth correlations) betw
 Note that the scripts only work on arrays without missing data! <br>
 <br>
 SNCs can be plotted on maps with Cartesian projection by using the function in plot_creating_Cartesian_maps.R.
+
+# 4. FINDING POTENTIAL ACTION CENTERS
+We obtain the coordinates of the potential action centers (PotACs) by using the script function_-_finding_PotACs.R.
+With that script pairs of grid cells - in other words poles - are detected which have the same correlation value in the strongest negative correlation field.
+The input files are the RDS files created with the script function_-_computing_absolute_minimum_correlations.R.
