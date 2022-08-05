@@ -2,10 +2,10 @@
 
 The scripts of **R_codes_related_to_atmospheric_teleconnections** - created by R (R Core Team, 2022) - are used to validate the general circulation models (GCMs) of the Coupled Model Intercomparison Project (CMIP) with respect to atmospheric teleconnections. Those are compared to reanalyses datasets. The gridded time series of the geopotential height field at the 500 hPa surface level are used for the validation. Only winter months (December, January, February) in the Northern Hemisphere (NH) are examined from 1951.
 
-***The main steps of the analysis are the followings:***
-**1. Downloading data**
-**2. Preprocessing data:** creating daily averages of the gridded time series, interpolating them to a common 2.5° horizontal grid in the NH; 31st December, 31st January and leap days are omitted
-**3. Creating basic fields for the analysis:** the fields of strongest negative correlations, in other words absolute minimum correlations are obtained and potential action centers are determined
+***The main steps of the analysis are the followings:***<br>
+**1. Downloading data**<br>
+**2. Preprocessing data:**<br> creating daily averages of the gridded time series, interpolating them to a common 2.5° horizontal grid in the NH; 31st December, 31st January and leap days are omitted
+**3. Creating basic fields for the analysis:**<br> the fields of strongest negative correlations, in other words absolute minimum correlations are obtained and potential action centers are determined
 **4. Analysing data:** <br>
    (a) Examination of the stabilty patterns <br>
        (published in Kristóf et al. 2020: https://doi.org/10.3390/atmos11070723) <br>
