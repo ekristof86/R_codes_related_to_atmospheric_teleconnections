@@ -19,14 +19,13 @@ Data of ERA-20C and ERA5 are downloaded with the *R scripts downloading_data_ERA
 # 2. PREPROCESSING DATA
 Preprocession is done by the Climate Data Operator (CDO; Schulzweida, 2019; https://doi.org/10.5281/zenodo.3539275).
 
-# 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs)
+# 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs) & DETECTING POTENTIAL ACTION CENTERS (PotACs)
 We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *function_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
 <br>
 Note that the scripts only work on arrays without missing data! <br>
 <br>
 SNCs can be plotted on maps with Cartesian projection by using the function in *plot_creating_Cartesian_maps.R*.
 
-# 4. DETECTING POTENTIAL ACTION CENTERS
 We obtain the coordinates of the potential action centers (PotACs) by using the script *function_-_finding_PotACs.R*.
 With that script pairs of grid cells - in other words poles - are detected which have the same correlation value in the SNC field.
 The input files are the RDS files created with the script *function_-_computing_absolute_minimum_correlations.R*.
