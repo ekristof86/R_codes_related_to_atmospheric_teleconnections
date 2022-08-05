@@ -44,6 +44,12 @@ library(maps) # map
 # point_pch: type of the symbol which represents the points if point==TRUE
 # point_size: size of the symbol which represents the points if point==TRUE
 # point_col: color of the symbol which represents the points if point==TRUE
+# line_coord_lon1: longitude of the point from which the line is drawn if connect_points==TRUE
+# line_coord_lon2: longitude of the point to which the line is drawn if connect_points==TRUE
+# line_coord_lat1: latitude of the point from which the line is drawn if connect_points==TRUE
+# line_coord_lat2: latitude of the point to which the line is drawn if connect_points==TRUE
+# line_width: width of the line if connect_points==TRUE
+# line_col: color of the line if connect_points==TRUE
 # contour_col: color of contour lines if contour==TRUE
 # contour_lwd: width of contour lines if contour==TRUE
 # contour_labcex: size of values associated with contour labels if contour==TRUE
@@ -63,6 +69,8 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
                               size_axis_x=1, size_axis_y=1, col_axis_x="grey60", col_axis_y="grey60",
                               col_geo_lines="black", col_borders="grey60",
                               point=TRUE, point_x=19.5, point_y=48, point_pch=16, point_size=1.5, point_col="red",
+                              connect_points=TRUE, line_coord_lon1=line_coord_lon1, line_coord_lon2=line_coord_lon2,
+                              line_coord_lat1=line_coord_lat1, line_coord_lat2=line_coord_lat2, line_width=2, line_col=red,
                               contour=FALSE, contour_col="red2", contour_lwd=2, contour_labcex=0.7){
   
   # Create the colorscale:
@@ -89,9 +97,13 @@ plottingDataOnMap <- function(file="Plot_title.png", width=19.5, height=6.8, res
       if(point==TRUE) {
         points(x=point_x, y=point_y, pch=point_pch, cex=point_size, col=point_col)
       }
+      if(connect_points==TRUE) {
+        arrows(x0=line_coord_lon1, x1=line_coord_lon2,
+               y0=line_coord_lat1, y1=line_coord_lat2, lwd=line_width, col=line_col, code=0)
+      }
       if(contour==TRUE) { 
         contour(x=x, y=y, z=z, col=contour_col, lwd=contour_lwd, labcex=contour_labcex,
                 levels=pretty(c(brks[1],tail(brks,1)), col_nr), add=TRUE)
-        }
+      }
   graphics.off()
 }
