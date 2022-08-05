@@ -4,8 +4,8 @@ The scripts of **R_codes_related_to_atmospheric_teleconnections** - created by R
 
 ***The main steps of the analysis are the followings:***<br>
 **1. Downloading data**<br>
-**2. Preprocessing data:**<br> creating daily averages of the gridded time series, interpolating them to a common 2.5° horizontal grid in the NH; 31st December, 31st January and leap days are omitted
-**3. Creating basic fields for the analysis:**<br> the fields of strongest negative correlations, in other words absolute minimum correlations are obtained and potential action centers are determined
+**2. Preprocessing data:**<br> creating daily averages of the gridded time series, interpolating them to a common 2.5° horizontal grid in the NH; 31st December, 31st January and leap days are omitted<br>
+**3. Creating basic fields for the analysis:**<br> the fields of strongest negative correlations, in other words absolute minimum correlations are obtained and potential action centers are determined<br>
 **4. Analysing data:** <br>
    (a) Examination of the stabilty patterns <br>
        (published in Kristóf et al. 2020: https://doi.org/10.3390/atmos11070723) <br>
