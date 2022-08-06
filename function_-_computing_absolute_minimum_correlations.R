@@ -75,7 +75,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE1: Dimensions of the variable, quantiles of the variable:")
   print(dim(var))
-  if(is.na(min(var))) stop("Error! There is no data in this array.")
+  if(is.na(min(var))) stop("Error! There is missing data in this array.")
   
   print(quantile(var))
     print("The first and last six values of the dimensions.")
@@ -130,7 +130,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE3: Dimensions of the variable, quantiles of the variable:")
   print(dim(var_dc_sd))
-  if(is.na(min(var_dc_sd))) stop("Error! There is no data in this array.")
+  if(is.na(min(var_dc_sd))) stop("Error! There is missing data in this array.")
   print(quantile(var_dc_sd))
   
   print("The first and last six values of the dimensions.")
