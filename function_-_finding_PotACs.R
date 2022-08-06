@@ -26,6 +26,10 @@
 # absmincor: title of the file which contains the strongest negative correlations (input data)
 # csv_name: title of the file which contains coordinates of the PotACs (output data)
 
+# Required functions from R packages:
+library(installr)
+check.integer <- installr:::check.integer
+
 
 
 ################## SEARCH FOR POTENTIAL ACTION CENTERS ##################
