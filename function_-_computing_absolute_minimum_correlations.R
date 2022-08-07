@@ -19,7 +19,7 @@
                          # then the array contains 144 x 37 data),
 
 # The fields of strongest negative correlations are obtained and stored from the arrays of the cross-correlations.
-# Note that cross correlations will not be stored.
+# Note that cross correlations are not stored.
 
 # Note that geopotential height (zg) are available in NCEP reanalyses and CMIP5/CMIP6 GCM outputs,
 # while geopotential data (z) are available in ERA reanalyses. z can be converted to zg as follows:
@@ -46,7 +46,8 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
                            time_origin= time_origin, variable=variable,
                            corrtype=corrtype, modname=modname, period=period,
                            lon1=lon1, lon2=lon2144, lat1=lat1, lat2=lat2,
-                           check=FALSE, path=path, file_RData=file_RData, file_RDS=file_RDS) {
+                           check=FALSE, path=path, file_RData=file_RData, file_RDS=file_RDS,
+                           check_miss_val=FALSE) {
 
   # Requried packages:
   library(ncdf4)  # to handle netCDF files (functions nc_open, ncvar_get, nc_close)
@@ -74,9 +75,12 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE1: Dimensions of the variable, quantiles of the variable:")
   print(dim(var))
-  if(is.na(min(var))) stop("Error! There is missing data in this array.")
+  # Checking for missing values:
+  if(check_miss_val==TRUE) {
+    if(is.na(min(var))) stop("Error! There is missing data in this array.")
+  }
   
-  print(quantile(var))
+  print(quantile(var, na.rm=TRUE))
     print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon))
@@ -103,8 +107,12 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE2: Dimensions of the variable, quantiles of the variable:")
   print(dim(var_dc))
-  if(is.na(min(var_dc))) stop("Error! There is missing data in this array.")
-    print(quantile(var_dc))
+  # Checking for missing values:
+  if(check_miss_val==TRUE) {
+    if(is.na(min(var_dc))) stop("Error! There is missing data in this array.")
+  }
+  
+    print(quantile(var_dc, na.rm=TRUE))
   print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon_dc))
@@ -129,8 +137,11 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   # Checking data:
   print("FILE3: Dimensions of the variable, quantiles of the variable:")
   print(dim(var_dc_sd))
-  if(is.na(min(var_dc_sd))) stop("Error! There is missing data in this array.")
-  print(quantile(var_dc_sd))
+  # Checking for missing values:
+  if(check_miss_val==TRUE) {
+    if(is.na(min(var_dc_sd))) stop("Error! There is missing data in this array.")
+  }
+  print(quantile(var_dc_sd, na.rm=TRUE))
   
   print("The first and last six values of the dimensions.")
   print("Longitudes:")
@@ -178,7 +189,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   
   # Checking data:
   print("FILE3: The quantiles of the detrended climatology datasets:")
-  print(quantile(var_dc_trend))
+  print(quantile(var_dc_trend, na.rm=TRUE))
 
   ######### III. COMPUTING CROSS-CORRELATIONS & STRONGEST NEGATIVE CORRELATIONS #########
   
