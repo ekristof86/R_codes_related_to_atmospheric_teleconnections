@@ -19,7 +19,7 @@
                          # then the array contains 144 x 37 data),
 
 # The fields of strongest negative correlations are obtained and stored from the arrays of the cross-correlations.
-# Note that cross correlations are not stored.
+# Note that cross correlations will not be stored.
 
 # Note that geopotential height (zg) are available in NCEP reanalyses and CMIP5/CMIP6 GCM outputs,
 # while geopotential data (z) are available in ERA reanalyses. z can be converted to zg as follows:
@@ -56,7 +56,6 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   library(maps)   # to add country borders to the map
   library(RColorBrewer)  # to create colorbar
   
-  # Title of the RData files in which cross-correlations are stored:
 
   ######### I. OPEN THE INPUT FILES AND STORE DATA #########
 
