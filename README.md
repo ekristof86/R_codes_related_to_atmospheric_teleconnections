@@ -14,18 +14,27 @@ The scripts of **R_codes_related_to_atmospheric_teleconnections** - created by R
  
 # 1. DOWNLOADING DATA
 At first, we get the data which are the basis of the analysis. <br>
-Data of ERA-20C and ERA5 are downloaded with the *R scripts downloading_data_ERA-20C.R* and *downloading_data_ERA5.R*.
+Time series of the ERA-20C and ERA5 can be downloaded with the R scripts *downloading_data_ERA-20C.R* and *downloading_data_ERA5.R*.
+GCM datasets were obtained from Earth System Grid Federation (ESGF) nodes.
+
 
 # 2. PREPROCESSING DATA
 Preprocession is done by the Climate Data Operator (CDO; Schulzweida, 2019; https://doi.org/10.5281/zenodo.3539275).
 
+
 # 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs) & DETECTING POTENTIAL ACTION CENTERS (PotACs)
-We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *function_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
+We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *01_function_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
 <br>
 Note that the scripts only work on arrays without missing data! <br>
 <br>
-SNCs can be plotted on maps with Cartesian projection by using the function in *plot_creating_Cartesian_maps.R*.
+SNCs can be plotted on maps with Cartesian projection by using the function in *02_function_creating_Cartesian_maps.R*.
 
-We obtain the coordinates of the potential action centers (PotACs) by using the script *function_-_finding_PotACs.R*.
+We obtain the coordinates of the potential action centers (PotACs) by using the script *03_function_-_finding_PotACs.R*.
 With that script pairs of grid cells - in other words poles - are detected which have the same correlation value in the SNC field.
-The input files are the RDS files created with the script *function_-_computing_absolute_minimum_correlations.R*.
+The input files are the RDS files created with the script *04_function_-_computing_absolute_minimum_correlations.R*.
+
+**An example of data procession can be found in the script *01_data_procession_SNC_PotACs.R*.
+
+
+# 4. CREATING CLUSTER PATTERNS BASED ON THE SNC FIELDS
+
