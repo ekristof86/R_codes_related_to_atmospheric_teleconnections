@@ -33,7 +33,7 @@ We obtain the coordinates of the potential action centers (PotACs) by using the 
 With that script pairs of grid cells - in other words poles - are detected which have the same correlation value in the SNC field.
 The input files are the RDS files created with the script *04_function_-_computing_absolute_minimum_correlations.R*.
 
-**A scheme of data procession can be found in the script *01_data_procession_SNC_PotACs.R.**
+**A scheme of data procession can be found in the script *01_data_procession_SNC_PotACs.R*.**
 
 
 # 4. CREATING CLUSTER PATTERNS BASED ON THE SNC FIELDS
