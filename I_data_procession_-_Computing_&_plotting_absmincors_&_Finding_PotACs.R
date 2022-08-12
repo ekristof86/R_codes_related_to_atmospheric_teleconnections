@@ -18,7 +18,7 @@ source(paste0(path_functions,"03_function_-_finding_PotACs.R"))
 # Give the path of the input files:
 path <- "D:/.../"
 
-# Titles of the input files: THE TEST FILES ARE IN THE TEST FILES FOLDER
+# Titles of the input files: THE TEST FILES ARE AVAILABLE HERE: https://ekristof86.web.elte.hu/test_files/
 file_title <- "test_dataset.nc" # the array contains random data which come from standard normal distribution
 file_title2 <- "test_dataset_means.nc"
 file_title3 <- "test_dataset_stds.nc"
