@@ -2,9 +2,9 @@
 ### COMPUTING CROSS CORRELATIONS AND THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS ###
 ######################################################################################
 
-# The following code is appropriate to computing cross correlations, creating the fields 
+# The following code is appropriate to computing cross correlations, creating the fields of
 # strongest negative correlations (SNCs), determining potential action centers (PotACs) and
-# plotting SNCs with PotACs. In the example, time series of RCP 4.5 simulation(s) are examined.
+# plotting SNCs with PotACs.
 
 ######### INPUT DATA #########
 
@@ -13,8 +13,13 @@ source("C:/.../01_function_-_computing_absolute_minimum_correlations.R")
 source("C:/.../02_function_-_creating_Cartesian_maps.R")
 source("C:/.../03_function_-_finding_PotACs.R")
 
-# Path of the daily climatology files:
+# Path of the input files:
 path <-  "C:/.../"
+
+# Titles of the input files:
+file_title <- "....nc"
+file_title2 <- "....nc"
+file_title3 <- "....nc"
 
 # Path of the rds files in which the fields of strongest negative correlations (SNCs) will be stored:
 path_SNCs <-  "C:/.../"
@@ -22,22 +27,24 @@ path_SNCs <-  "C:/.../"
 # Path of the files in which the csv files of potential action centers (PotACs) will be stored:
 path_potACs <- "C:/.../"
 
-file <- Sys.glob(file.path(paste0(path,"*.nc")))  # file(s) which contain(s) gridded time series
-file2 <- Sys.glob(file.path(paste0(path,"*day_clim.nc"))) # file(s) which contain(s) the means of the time series in each grid cell
-file3 <- Sys.glob(file.path(paste0(path,"*day_clim_std.nc"))) # file(s) which contain(s) the standard deviations of the time series in each grid cell
+# Creating lists of file titles:
+file <- Sys.glob(file.path(paste0(path, file_title)))   # file(s) which contain(s) gridded time series
+file2 <- Sys.glob(file.path(paste0(path, file_title2))) # file(s) which contain(s) the means of the time series in each grid cell
+file3 <- Sys.glob(file.path(paste0(path, file_title3))) # file(s) which contain(s) the standard deviations of the time series in each grid cell
 
 # Examining RCP4.5 simulation(s):
+# Examining simulation(s), model(s) and time period(s):
 simulation <- "RCP_4.5"
-modname <- c("ACCESS1-0", "...")
-period  <- c("2006-2035", "...")
+modname <- c("ACCESS1-0") # you can add further models to the list
+period  <- c("2006-2035") # you can add further time series to the list
 
 
 ############################################################################
 ############ CREATING FIELDS OF STRONGEST NEGATIVE CORRELATIONS ############
 ############################################################################
 
-modname2 <- rep(modname, each=length(period))
-period2 <- rep(period, times=length(unique(modname)))
+modname2 <- rep(modname, each=length(period))         # It is useful if two or more models are examined.
+period2 <- rep(period, times=length(unique(modname))) # It is useful if two or more models are examined.
 
 for (i in 1:length(file)) {
   
