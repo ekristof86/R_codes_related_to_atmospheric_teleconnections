@@ -39,4 +39,4 @@ The input files are the RDS files created with the script *04_function_-_computi
 
 # 4. CREATING CLUSTER PATTERNS BASED ON THE SNC FIELDS
 
-** An example of data procession can be found in the script II_data_procession_-_Pattern_detection.R.**
+**An example of data procession can be found in the script *II_data_procession_-_Pattern_detection.R*.**
