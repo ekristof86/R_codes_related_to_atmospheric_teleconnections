@@ -9,25 +9,25 @@
 ######### INPUT DATA #########
 
 # Give the path of the the following functions:
-path_functions <- "D:/OneDrive/Posztdoktori/Scriptek/GitHub/"
+path_functions <- "D:/.../"
 
 source(paste0(path_functions,"01_function_-_computing_absolute_minimum_correlations.R"))
 source(paste0(path_functions,"02_function_-_creating_Cartesian_maps.R"))
 source(paste0(path_functions,"03_function_-_finding_PotACs.R"))
 
 # Give the path of the input files:
-path <- "D:/OneDrive/Posztdoktori/Scriptek/GitHub/testfiles/"
+path <- "D:/.../"
 
-# Titles of the input files:
-file_title <- "test_dataset.nc"
+# Titles of the input files: THE TEST FILES ARE IN THE TEST FILES FOLDER
+file_title <- "test_dataset.nc" # the array contains random data which come from standard normal distribution
 file_title2 <- "test_dataset_means.nc"
 file_title3 <- "test_dataset_stds.nc"
 
 # Path of the rds files in which the fields of strongest negative correlations (SNCs) will be stored:
-path_SNCs <-  "C:/Users/ekris/Documents/"
+path_SNCs <-  "D:/.../"
 
 # Path of the files in which the csv files of potential action centers (PotACs) will be stored:
-path_potACs <- "C:/Users/ekris/Documents/"
+path_potACs <- "D:/.../"
 
 # Creating lists of file titles:
 file <- Sys.glob(file.path(paste0(path, file_title)))   # file(s) which contain(s) gridded time series
