@@ -4,7 +4,7 @@
 
 # This script computes cross-correlations between daily/monthly climatology (clim) time series where
 # the linear trend is removed. After that fields of strongest negative correlations - in other words
-# absolute miminum correlations - are created and # stored in RDS file. Additional details
+# absolute minimum correlations - are created and # stored in RDS file. Additional details
 # (e.g., titles of the input files) are stored in RData file.
 
 # The input files are 3-dimensional (3D) arrays (lon x lat x time) in netCDF files:
