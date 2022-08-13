@@ -23,7 +23,7 @@ Preprocession is done by the Climate Data Operator (CDO; Schulzweida, 2019; http
 
 # 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs) & DETECTING POTENTIAL ACTION CENTERS (PotACs)
 
-**An example of data procession can be found in the script *01_data_procession_SNC_PotACs.R*.**
+**An example of data procession can be found in the script *I_data_procession_-_SNC_PotACs.R*.**
 Test files can be downloaded from this link: https://ekristof86.web.elte.hu/test_files/
 
 We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *01_function_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
@@ -40,3 +40,6 @@ The input files are the RDS files created with the script *04_function_-_computi
 # 4. CREATING CLUSTER PATTERNS BASED ON THE SNC FIELDS
 
 **An example of data procession can be found in the script *II_data_procession_-_Pattern_detection.R*.**
+
+For that purpose functions are used which can be found in the scripts *04_function_-_pattern_detector.R* and *05_function_-_pattern_connector.R*.
+
