@@ -37,7 +37,7 @@ file3 <- Sys.glob(file.path(paste0(path, file_title3))) # file(s) which contain(
 # Examining RCP4.5 simulation(s):
 # Examining simulation(s), model(s) and time period(s):
 simulation <- "RCP_4.5"
-modname <- c("ACCESS1-0") # you can add further models to the list
+modname <- c("GCM") # you can add further models to the list
 period  <- c("2006-2035") # you can add further time series to the list
 
 # vectors of latitudes & longitudes (to detect PotACs):
