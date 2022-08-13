@@ -23,14 +23,14 @@ Preprocession is done by the Climate Data Operator (CDO; Schulzweida, 2019; http
 
 # 3. CREATING BASIC FIELDS FOR THE ANALYSIS: OBTAINING THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS (SNCs) & DETECTING POTENTIAL ACTION CENTERS (PotACs)
 
-**An example of data procession can be found in the script *I_data_procession_-_Computing_&_plotting_absmincors_&_Finding_PotACs.R*.**
+**An example of data procession can be found in the script *I_data_procession_-_computing_&_plotting_absmincors_&_Finding_PotACs.R*.**
 Test files can be downloaded from this link: https://ekristof86.web.elte.hu/test_files/
 
-We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *01_function_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
+We compute Pearson cross-correlation coefficients (henceforth correlations) between gridded time series for each database by using the script *01_function_-_computing_absolute_minimum_correlations.R*. The correlations are determined based on detrended daily climatology datasets. (The long-term mean is subtracted from each data and those are divided by the long-term standard deviation in each grid cell.) Then, SNCs are obtained in each grid cell. <br>
 <br>
 Note that the scripts only work on arrays without missing data! <br>
 <br>
-SNCs can be plotted on maps with Cartesian projection by using the function in *02_function_creating_Cartesian_maps.R*.
+SNCs can be plotted on maps with Cartesian projection by using the function in *02_function_-_creating_Cartesian_maps.R*.
 
 We obtain the coordinates of the potential action centers (PotACs) by using the script *03_function_-_finding_PotACs.R*.
 With that script pairs of grid cells - in other words poles - are detected which have the same correlation value in the SNC field.
