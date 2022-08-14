@@ -1,6 +1,6 @@
-######################################################################################
-### COMPUTING CROSS CORRELATIONS AND THE FIELDS OF STRONGEST NEGATIVE CORRELATIONS ###
-######################################################################################
+##########################################################################################################
+### COMPUTING CROSS CORRELATIONS, STRONGEST NEGATIVE CORRELATIONS, DETECTING POTENTIAL ACTION CENTERS  ###
+##########################################################################################################
 
 # The following code is appropriate to computing cross correlations, creating the fields of
 # strongest negative correlations (SNCs), determining potential action centers (PotACs) and
@@ -48,9 +48,7 @@ modname2 <- rep(modname, each=length(period))         # It is useful if two or m
 period2 <- rep(period, times=length(unique(modname))) # It is useful if two or more models are examined.
 
 
-############################################################################
 ############ CREATING FIELDS OF STRONGEST NEGATIVE CORRELATIONS ############
-############################################################################
 
 for (i in 1:length(file)) {
   
@@ -68,9 +66,7 @@ for (i in 1:length(file)) {
 }
 
 
-############################################################
 ############ DETECTING POTENTIAL ACTION CENTERS ############
-############################################################
 
 for(i in 1:length(modname2)) {
   # Input array which contains the arrays of the SNCs:
@@ -83,9 +79,7 @@ for(i in 1:length(modname2)) {
 }
 
 
-##############################################################
-### PLOTTING CROSS CORRELATIONS & POTENTIAL ACTION CENTERS ###
-##############################################################
+############ PLOTTING STRONGEST NEGATIVE CORRELATIONS & POTENTIAL ACTION CENTERS ############
 
 rds_files <- Sys.glob(file.path(paste0(path_SNCs,"*.RDS")))
 
