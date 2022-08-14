@@ -8,14 +8,14 @@
 
 ######### INPUT DATA #########
 
-# Give the path of the the following functions:
+# Set the path of the the following functions:
 path_functions <- "D:/.../"
 
 source(paste0(path_functions,"01_function_-_computing_absolute_minimum_correlations.R"))
 source(paste0(path_functions,"02_function_-_creating_Cartesian_maps.R"))
 source(paste0(path_functions,"03_function_-_finding_PotACs.R"))
 
-# Give the path of the input files:
+# Set the path of the input files:
 path <- "D:/.../"
 
 # Titles of the input files: THE TEST FILES ARE AVAILABLE HERE: https://ekristof86.web.elte.hu/test_files/
@@ -23,10 +23,10 @@ file_title <- "test_dataset.nc" # the array contains random data which come from
 file_title2 <- "test_dataset_means.nc"
 file_title3 <- "test_dataset_stds.nc"
 
-# Path of the rds files in which the fields of strongest negative correlations (SNCs) will be stored:
+# Set the path of the rds files in which the fields of strongest negative correlations (SNCs) will be stored:
 path_SNCs <-  "D:/.../"
 
-# Path of the files in which the csv files of potential action centers (PotACs) will be stored:
+# Set the path of the files in which the csv files of potential action centers (PotACs) will be stored:
 path_potACs <- "D:/.../"
 
 # Creating lists of file titles:
@@ -46,6 +46,7 @@ lon <- seq(-180,177.5,2.5)
 
 modname2 <- rep(modname, each=length(period))         # It is useful if two or more models are examined.
 period2 <- rep(period, times=length(unique(modname))) # It is useful if two or more models are examined.
+
 
 ############################################################################
 ############ CREATING FIELDS OF STRONGEST NEGATIVE CORRELATIONS ############
