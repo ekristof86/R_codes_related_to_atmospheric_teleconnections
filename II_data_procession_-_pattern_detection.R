@@ -214,7 +214,8 @@ for (pm_quant in sequence_of_quantiles) {
   }
 
   
-  ### Visualizing CPs on map with Cartesian projection:  
+  ### Visualizing CPs on map with Cartesian projection:
+       
   start <- 6000
   brks <- start:max((unique(as.numeric(patterns_ATL_fix_after_clust_new))))
   lab_brks <- 0:(length(unique(as.numeric(patterns_ATL_fix_after_clust_new)))-1)
