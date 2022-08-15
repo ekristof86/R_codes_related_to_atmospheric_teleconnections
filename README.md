@@ -42,4 +42,4 @@ The input files are the RDS files created with the script *04_function_-_computi
 **An example of data procession can be found in the script *II_data_procession_-_Pattern_detection.R*.**
 
 For that purpose functions are used which can be found in the scripts *04_function_-_pattern_detector.R* and *05_function_-_pattern_connector.R*.
-
+Cluster patterns are visualized on maps with Cartesian projection by using the function in *02_function_-_creating_Cartesian_maps.R*.
