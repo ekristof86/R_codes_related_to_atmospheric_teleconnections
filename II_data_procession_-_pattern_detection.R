@@ -212,13 +212,14 @@ for (pm_quant in sequence_of_quantiles) {
           patterns_ATL_fix_after_clust_new_verif))>0){
       print(paste(modname2[mod],period2[mod]))
   }
+
   
+  ### Visualizing CPs on map with Cartesian projection:  
   start <- 6000
   brks <- start:max((unique(as.numeric(patterns_ATL_fix_after_clust_new))))
   lab_brks <- 0:(length(unique(as.numeric(patterns_ATL_fix_after_clust_new)))-1)
   lab_brks[1] <- "No\ncluster"
 
-  # Visualizing CPs on map with Cartesian projection:
   plottingDataOnMap(file=paste0(path_CP_maps,modname2[mod],"_",period2[mod],"_",simulation,"_cluster_pattern_rect.png"),
                     width=19.5, height=6.8, res=300, ptsize=18,
                     x=lon, y=lat, z=t(patterns_ATL_fix_after_clust_new),
