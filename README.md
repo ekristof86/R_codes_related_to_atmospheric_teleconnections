@@ -44,5 +44,5 @@ The input files are the RDS files created with the script *04_function_-_computi
 For that purpose functions are used which can be found in the scripts *04_function_-_pattern_detector.R* and *05_function_-_pattern_connector.R*.
 Cluster patterns are visualized on maps with Cartesian projection by using the function in *02_function_-_creating_Cartesian_maps.R*.
 
-By using the script ***III_data_procession_-_associating_clusters_to_the_PotACs.**R*, clusters are associated with each PotAC in case of each GCM for each time period and those are stored in csv files. Tables stored in the csv files are merged. Wide and long formats of the merged tables are availabe.
+By using the script ***III_data_procession_-_associating_clusters_to_the_PotACs.R***, clusters are associated with each PotAC in case of each GCM for each time period and those are stored in csv files. Tables stored in the csv files are merged. Wide and long formats of the merged tables are availabe.
 
