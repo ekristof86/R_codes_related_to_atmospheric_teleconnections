@@ -12,6 +12,7 @@ The scripts of **R_codes_related_to_atmospheric_teleconnections** - created by R
    (b) Examination of the cluster patterns and creating teleconnection indices <br>
        (published in Kristóf et al. 2021: https://doi.org/10.3390/atmos12101236)
  
+ 
 # 1. DOWNLOADING DATA
 At first, we get the data which are the basis of the analysis. <br>
 Time series of the ERA-20C and ERA5 can be downloaded with the R scripts *downloading_data_ERA-20C.R* and *downloading_data_ERA5.R*.
@@ -45,4 +46,7 @@ For that purpose functions are used which can be found in the scripts *04_functi
 Cluster patterns are visualized on maps with Cartesian projection by using the function in *02_function_-_creating_Cartesian_maps.R*.
 
 By using the script ***III_data_procession_-_associating_clusters_to_the_PotACs.R***, clusters are associated with each PotAC in case of each GCM for each time period and those are stored in csv files. Tables stored in the csv files are merged. Wide and long formats of the merged tables are availabe.
+
+**GCM cluster patterns are compared to the reference cluster pattern by using the script *06_function_-_ROC_and_related_measures.R*.**
+Cluster patterns created by the script *II_data_procession_-_pattern_detection.R* are stored in RDS files, i.e. two-dimensional arrays.
 
