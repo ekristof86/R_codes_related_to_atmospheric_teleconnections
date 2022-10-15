@@ -19,7 +19,7 @@
                          # then the array contains 144 x 37 data),
 
 # The fields of strongest negative correlations are obtained and stored from the arrays of the cross-correlations.
-# Note that cross correlations are not stored.
+# Note that cross-correlations are not stored.
 
 # Note that geopotential height (zg) are available in NCEP reanalyses and CMIP5/CMIP6 GCM outputs,
 # while geopotential data (z) are available in ERA reanalyses. z can be converted to zg as follows:
@@ -81,7 +81,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   }
   
   print(quantile(var, na.rm=TRUE))
-    print("The first and last six values of the dimensions.")
+  print("The first and last six values of the dimensions.")
   print("Longitudes:")
   print(head(lon))
   print(tail(lon))
@@ -101,6 +101,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   time_dc <- ncvar_get(file_dc.nc, time_numeric)
   date_dc <- as.POSIXct(time_dc*3600, origin=time_origin, tz="UTC")
   var_dc <- ncvar_get(file_dc.nc, variable)
+  var_dc <- var_dc[lon1:lon2,lat1:lat2,]
   
   nc_close(file_dc.nc)
   
@@ -131,7 +132,8 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   time_dc_sd <- ncvar_get(file_dc_sd.nc, time_numeric)
   date_dc_sd <- as.POSIXct(time_dc_sd*3600, origin=time_origin, tz="UTC")
   var_dc_sd <- ncvar_get(file_dc_sd.nc, variable)
-  
+  var_dc_sd <- var_dc_sd[lon1:lon2,lat1:lat2,]
+
   nc_close(file_dc_sd.nc)
   
   # Checking data:
