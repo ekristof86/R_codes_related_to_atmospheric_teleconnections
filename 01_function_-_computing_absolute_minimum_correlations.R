@@ -182,7 +182,7 @@ AbsMinCor_clim <- function(file=file, file2=file2, file3=file3,
   }
   
   ### Creating detrended climatology datasets:
-  var_dc_trend <- array(0,dim=c(length(lon1:lon2),length(lat1:lat2),dim(time)))
+  var_dc_trend <- array(NA,dim=c(length(lon1:lon2),length(lat1:lat2),dim(time)))
   for (p in 1:length(lon1:lon2)) { 
     for (q in 1:length(lat1:lat2)) { 
       var_dc_trend[p,q,] <- detrend(var_anom_dc[p,q,])
